@@ -46,3 +46,4 @@ testem.log
 Thumbs.db
 
 .netlify/state.json
+.env
