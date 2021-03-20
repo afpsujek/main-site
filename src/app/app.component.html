@@ -3,5 +3,12 @@
     <mat-drawer-content>
         <router-outlet></router-outlet>
     </mat-drawer-content>
-    <mat-drawer #drawer mode="side" [(opened)]="sidenavStatus">Content</mat-drawer>
+    <mat-drawer #drawer mode="side" [(opened)]="sidenavStatus">
+        <button class="nav-button" mat-button routerLink="">
+            Home
+        </button>
+        <button class="nav-button" mat-button routerLink="/blog">
+            Blog
+        </button>
+    </mat-drawer>
 </mat-drawer-container>
