@@ -16,13 +16,17 @@ export class AppComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     this.subs.push(
-      this.sidenavService.getSidenavStatus().subscribe(status => {
-        this.sidenavStatus = status;
-      })
+      this.subToGetSidenavStatus()
     );
   }
 
   ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe());
+  }
+
+  private subToGetSidenavStatus() {
+    return this.sidenavService.getSidenavStatus().subscribe(status => {
+      this.sidenavStatus = status;
+    });
   }
 }
