@@ -1,10 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { BehaviorSubject, Subscription } from 'rxjs';
+import { SidenavService } from './core/services/sidenav.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'main-site';
+export class AppComponent implements OnInit, OnDestroy{
+
+  subs: Subscription[] = [];
+  sidenavStatus: boolean = false;
+
+  constructor(private sidenavService: SidenavService) {}
+
+  ngOnInit(): void {
+    this.subs.push(
+      this.sidenavService.getSidenavStatus().subscribe(status => {
+        this.sidenavStatus = status;
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subs.forEach(sub => sub.unsubscribe());
+  }
 }
