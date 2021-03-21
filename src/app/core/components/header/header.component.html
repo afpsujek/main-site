@@ -1,6 +1,11 @@
 <mat-toolbar color="primary" class="header-toolbar">
-    <button mat-icon-button class="header-button" aria-label="header menu button" (click)="updateSidenav()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <span class="header-title">Aaron Psujek</span>
+    <section>
+        <span class="header-title">Aaron Psujek</span>
+        <button mat-button class="header-button" aria-label="header home button" routerLink="">
+            Home
+        </button>
+        <button mat-button class="header-button" aria-label="header blog button" routerLink="/blog">
+            Blog
+        </button>   
+    </section>
 </mat-toolbar>

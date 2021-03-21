@@ -15,8 +15,8 @@ import { BlogModule } from './blog/blog.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
+    AppRoutingModule,
     SharedModule,
     BlogModule,
     PersonalModule,
