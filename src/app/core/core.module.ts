@@ -11,6 +11,7 @@ import { AppRoutingModule } from '../app-routing.module';
   declarations: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
+    AppRoutingModule,
     SharedModule
   ],
   exports: [HeaderComponent, FooterComponent]
